@@ -8,10 +8,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.motivation.databinding.ActivityMainBinding
+//import com.example.motivation.databinding.ActivityMainBinding
 import com.example.motivation.databinding.ActivityUserBinding
 
-class UserActivity : AppCompatActivity(), View.OnClickListener {
+class UserActivity : AppCompatActivity() {
     private lateinit var binding: ActivityUserBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,20 +20,19 @@ class UserActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(binding.root)
 
 
-        binding.buttonSave.setOnClickListener(this)
-
-        enableEdgeToEdge()
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        binding.buttonSave.setOnClickListener { view -> verification() }
     }
 
-    override fun onClick(view: View) {
-        Toast.makeText(this, "Estou funcionando 2", Toast.LENGTH_SHORT).show()
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
+    private fun verification() {
+        val userName = binding.editUserName.text.toString()
+        if (userName != "") {
+
+            SharedPreferences(this).storeString("USER_NAME", userName)
+
+            startActivity(Intent(this, MainActivity::class.java))
+        } else {
+            Toast.makeText(this, "Por favor coloque um nome.", Toast.LENGTH_SHORT).show()
+        }
     }
 }
 

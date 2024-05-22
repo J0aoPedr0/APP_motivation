@@ -1,34 +1,27 @@
 package com.example.motivation
 
-import android.content.Context
+import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.AttributeSet
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.motivation.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.textHelloUser.text = "Olá, " + SharedPreferences(this).getString("USER_NAME")
 
-        binding.buttonNewPhrase.setOnClickListener(this)
-
+        binding.buttonNewPhrase.setOnClickListener { newPhrase() }
     }
 
-    override fun onClick(view: View) {
+    private fun newPhrase() {
         Toast.makeText(this, "Estou funcionando", Toast.LENGTH_SHORT).show()
     }
 }
