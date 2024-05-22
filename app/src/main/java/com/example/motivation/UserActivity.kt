@@ -1,14 +1,8 @@
 package com.example.motivation
-
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-//import com.example.motivation.databinding.ActivityMainBinding
 import com.example.motivation.databinding.ActivityUserBinding
 
 class UserActivity : AppCompatActivity() {
@@ -20,7 +14,7 @@ class UserActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        binding.buttonSave.setOnClickListener { view -> verification() }
+        binding.buttonSave.setOnClickListener {verification() }
     }
 
     private fun verification() {

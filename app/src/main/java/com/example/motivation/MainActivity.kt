@@ -16,7 +16,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.textHelloUser.text = "Olá, " + SharedPreferences(this).getString("USER_NAME")
+        val name = SharedPreferences(this).getString("USER_NAME")
+        binding.textHelloUser.text = "Olá, $name!"
 
         binding.buttonNewPhrase.setOnClickListener { newPhrase() }
     }
