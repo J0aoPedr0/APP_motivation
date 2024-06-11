@@ -1,8 +1,10 @@
-package com.example.motivation
+package com.example.motivation.UserInterface
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.motivation.infrastructure.MotivationConstants
+import com.example.motivation.infrastructure.SharedPreferences
 import com.example.motivation.databinding.ActivityUserBinding
 
 class UserActivity : AppCompatActivity() {
@@ -21,7 +23,9 @@ class UserActivity : AppCompatActivity() {
         val userName = binding.editUserName.text.toString()
         if (userName != "") {
 
-            SharedPreferences(this).storeString("USER_NAME", userName)
+            MotivationConstants()
+
+            SharedPreferences(this).storeString(MotivationConstants.KEY.User_Name, userName)
 
             startActivity(Intent(this, MainActivity::class.java))
         } else {

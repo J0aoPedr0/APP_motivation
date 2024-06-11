@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="white">#FFFFFFFF</color>
-    <color name="purple">#7C1772</color>
+    <color name="purple">#5A1354</color>
     <color name="half_black">#80000000</color>
     <color name="light_pink">#D385A9</color>
+    <color name="main_purple">#832479</color>
 
 </resources>

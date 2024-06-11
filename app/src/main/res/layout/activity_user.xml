@@ -5,9 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#832479"
+    android:background="@color/main_purple"
     android:orientation="vertical"
-    tools:context=".UserActivity">
+    tools:context=".UserInterface.UserActivity">
 
     <TextView
         android:id="@+id/text_lets_start"

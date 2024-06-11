@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".UserInterface.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,8 +20,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/ic_infinity_simbol"
-            app:tint="@color/white" />
+            android:src="@drawable/ic_image_infinity"
+            app:tint="@color/half_black"/>
 
         <ImageView
             android:id="@+id/image_smile"
