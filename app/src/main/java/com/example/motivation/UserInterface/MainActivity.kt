@@ -1,6 +1,7 @@
 package com.example.motivation.UserInterface
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,7 @@ import com.example.motivation.R
 import com.example.motivation.infrastructure.MotivationConstants
 import com.example.motivation.infrastructure.SharedPreferences
 import com.example.motivation.databinding.ActivityMainBinding
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,20 +24,29 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        saveData()
+
         handleFilter(R.id.image_infinity)
         handleNextPhrase()
-        // Clicks eventes
+
+
+
+
+        // Clicks events
         binding.buttonNewPhrase.setOnClickListener { view -> handleClicks(view) }
         binding.imageInfinity.setOnClickListener { view -> handleClicks(view) }
         binding.imageSmile.setOnClickListener { view -> handleClicks(view) }
         binding.imageBrightness.setOnClickListener { view -> handleClicks(view) }
+        binding.textHelloUser.setOnClickListener { view -> handleClicks(view) }
+    }
+    override fun onResume() {
+        super.onResume()
+        saveData()
     }
 
 
     private fun saveData() {
         val name = SharedPreferences(this).getString(MotivationConstants.KEY.User_Name)
-        binding.textHelloUser.text = "Olá, $name!"
+        binding.textHelloUser.text = getString(R.string.Hello, name)
     }
 
     private fun handleClicks(view: View) {
@@ -49,11 +60,14 @@ class MainActivity : AppCompatActivity() {
             )
         ) {
             handleFilter(view.id)
+
+        }else if (view.id == R.id.text_hello_user){
+            startActivity(Intent(this, UserActivity::class.java))
         }
     }
 
     private fun handleNextPhrase() {
-        binding.textMotivationPhrase.text = Mock().getPhrase(categoryId)
+        binding.textMotivationPhrase.text = Mock().getPhrase(categoryId, Locale.getDefault().language)
     }
 
     private fun handleFilter(id: Int) {

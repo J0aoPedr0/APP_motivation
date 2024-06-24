@@ -6,4 +6,6 @@
     <string name="whats_your_name">Qual o seu nome?</string>
     <string name="save">Salvar</string>
     <string name="hello_kotlin">Olá, Kotlin!</string>
+    <string name="Please_put_a_name">Por favor coloque um nome.</string>
+    <string name="Hello">Olá, <b>%s</b>!</string>
 </resources>

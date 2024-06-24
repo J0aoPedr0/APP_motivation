@@ -3,6 +3,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.motivation.R
 import com.example.motivation.infrastructure.MotivationConstants
 import com.example.motivation.infrastructure.SharedPreferences
 import com.example.motivation.databinding.ActivityUserBinding
@@ -29,7 +30,7 @@ class UserActivity : AppCompatActivity() {
 
             startActivity(Intent(this, MainActivity::class.java))
         } else {
-            Toast.makeText(this, "Por favor coloque um nome.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.Please_put_a_name), Toast.LENGTH_SHORT).show()
         }
     }
 }

@@ -11,4 +11,9 @@ class MotivationConstants {
                 const val SMILE = 2
                 const val BRIGHTNESS = 3
         }
+        object LANGUAGE {
+                const val PORTUGUESE = "pt"
+                const val ENGLISH = "en"
+                const val FRENCH = "fr"
+        }
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Motivation</string>
+    <string name="new_phrase">New phrase</string>
+    <string name="Phrases">Phrases</string>
+    <string name="lets_start">Let\'s start?</string>
+    <string name="whats_your_name">What\'s your name?</string>
+    <string name="save">Save</string>
+    <string name="hello_kotlin">Hello, Kotlin!</string>
+    <string name="Please_put_a_name">Please put a name.</string>
+    <string name="Hello">Hello, <b>%s</b>!</string>
+</resources>

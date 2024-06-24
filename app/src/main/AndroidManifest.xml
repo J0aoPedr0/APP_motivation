@@ -15,14 +15,18 @@
         <activity
             android:name=".UserInterface.UserActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
         <activity
             android:name=".UserInterface.MainActivity"
-            android:exported="false" />
+            android:exported="false"/>
+
+
+
+
 
     </application>
 
